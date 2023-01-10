@@ -8,6 +8,7 @@ body{
     display: flex;
     justify-content: center;
 }
+
 .timer{
     display: flex;
     justify-content: center;
@@ -31,4 +32,23 @@ section button{
     border: 1px solid #D3D3D3 ;
     cursor: pointer;
 
+}
+
+@media (max-width: 360px) {
+    main{
+        width: 350px;
+    }
+    h1{
+        font-size: 56px;
+        text-align: center;
+    }
+}
+@media (max-width: 280px) {
+    main{
+        width: 275px;
+    }
+    h1{
+        font-size: 35px;
+        text-align: center;
+    }
 }
