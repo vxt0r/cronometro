@@ -20,11 +20,11 @@ body{
 section{
     display: flex;
     justify-content: space-between;
-    margin-top: 25px;
+    margin-top: 1.5em;
 }
 section button{
     width: 30%;
-    height: 30px;
+    height: 2em;
     color: #D3D3D3;
     background-color: #363636;
     font-weight: bold;
@@ -34,21 +34,21 @@ section button{
 
 }
 
-@media (max-width: 360px) {
-    main{
-        width: 350px;
+@media (max-width: 380px) {
+    .timer{
+        width: 85vw;
     }
     h1{
-        font-size: 56px;
+        font-size: 1.7em;
         text-align: center;
     }
 }
-@media (max-width: 280px) {
-    main{
-        width: 275px;
+@media (max-width: 290px) {
+    .timer{
+        width: 90vw;
     }
     h1{
-        font-size: 35px;
+        font-size: 1.4em;
         text-align: center;
     }
-}
+}  
