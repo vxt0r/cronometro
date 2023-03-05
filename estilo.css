@@ -43,12 +43,22 @@ section button{
         text-align: center;
     }
 }
+
+@media (max-width: 350px) {
+    .timer{
+        width: 85vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h1{
+        font-size: 1.6em;
+    }
+}
 @media (max-width: 290px) {
     .timer{
         width: 90vw;
     }
     h1{
         font-size: 1.4em;
-        text-align: center;
     }
 }  
