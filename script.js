@@ -2,27 +2,23 @@ let segundos = 0
 let minutos = 0
 let horas = 0
 
-const seg = document.querySelector('.seg')
-const min = document.querySelector('.min')
-const hor = document.querySelector('.hor')
-
 const mostrarTimer = ()=>{
-    seg.innerText = `0${segundos}` 
-    min.innerText = `0${minutos}`
-    hor.innerText = `0${horas}`
+    $('.seg').text(`0${segundos}`)  
+    $('.min').text(`0${minutos}`)
+    $('.hor').text(`0${horas}`)
 }
 
 mostrarTimer()
 
 const aumentarTempo = (unidade,div)=>{
     unidade++
-    div.innerText = `0${unidade}` 
+    div.text(`0${unidade}`)
     if(unidade > 9 && unidade < 60){
-        div.innerText = `${unidade}` 
+        div.text(`${unidade}`) 
     }
     else if(unidade > 59){
         unidade = 0
-        div.innerText = `0${unidade}` 
+        div.text(`0${unidade}`)
     }
     return unidade
 }
@@ -37,28 +33,22 @@ let timerHor
 
 const iniciarTimer = ()=>{
     timerSeg = setInterval(()=>{
-        segundos = aumentarTempo(segundos,seg)
+        segundos = aumentarTempo(segundos,$('.seg'))
     },segundo)
     timerMin = setInterval(()=>{
-        minutos = aumentarTempo(minutos,min)
+        minutos = aumentarTempo(minutos,$('.min'))
     },minuto)
     timerHor = setInterval(()=>{
-        horas = aumentarTempo(horas,hor)
+        horas = aumentarTempo(horas,$('.hor'))
     },hora)
     
 }
-
-const btnIniciar = document.querySelector('.iniciar')
-btnIniciar.addEventListener('click',iniciarTimer)
 
 const pausar = ()=>{
     clearInterval(timerSeg)
     clearInterval(timerMin)
     clearInterval(timerHor)
 }
-
-const btnPausar = document.querySelector('.pausar')
-btnPausar.addEventListener('click',pausar)
 
 const resetar = ()=>{
     pausar()
@@ -68,8 +58,9 @@ const resetar = ()=>{
     mostrarTimer()
 }
 
-const btnResetar = document.querySelector('.resetar')
-btnResetar.addEventListener('click',resetar)
+$('.iniciar').click(iniciarTimer)
+$('.pausar').click(pausar)
+$('.resetar').click(resetar)
 
 
 
